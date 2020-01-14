@@ -1,0 +1,4 @@
+*.un~
+cscope.*
+.rootdir
+*.o
