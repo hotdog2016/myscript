@@ -11,6 +11,7 @@ function autocommit {
 		if [  -f "$gitfile" ]; then
 				./$gitfile
 			echo "$PWD git OK!"
+			echo "###################################"
 			else
 				echo "$PWD can't find autogit.sh"
 				return	
