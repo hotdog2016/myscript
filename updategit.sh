@@ -2,6 +2,7 @@
 
 gitfile="autogit.sh"
 gitdir=".git"
+nowdir=$PWD
 
 function autocommit {
 	cd $1 
@@ -26,4 +27,6 @@ autocommit ~/workspace/C
 autocommit ~/workspace/myscript
 autocommit ~/.config
 autocommit ~/vimwiki
+
+cd $nowdir
 
