@@ -1,6 +1,4 @@
-#!/bin/zsh
-
-#获取所有头文件的路径                                                                                                                                                                   
+#!/bin/bash
 
 temp=$(dirname $(find $PWD -name '*.h' ))
 
