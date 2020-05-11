@@ -20,7 +20,7 @@ if [ "$2" = "" ];then
 fi
 
 if [ ! -f "rsync_exclude_list" ];then
-	echo "please create rsync_file_list!"
+	echo "please create rsync_exclude_list!"
 	exit
 fi
 

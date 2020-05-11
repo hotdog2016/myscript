@@ -1,16 +1,26 @@
-#!/bin/bash
+#!/bin/zsh
 
-temp=$(dirname $(find $PWD -name '*.h' ))
-
+CWD=$(cd $1; pwd)
+temp=$(dirname $(find $CWD -name '*.h' ))
 #将结果导入到test1这个文件中，马上会对这个文件做一些修改，然后加到ycm配置文件里面去
 echo "$temp"  > test1
-
 #删除重复的路径
 sort -n test1 | uniq > test2
-
 #将每一行都变成'adb/adfadf/', 这种形式
 #行首加'
 sed -i "s/^/-I/g" test2
+if [[ ! -f "$CWD/.ccls" ]] then;
+	touch $CWD/.ccls
+	cat test2 >> $CWD/.ccls
+	rm -f test1 test2
+else
+	rm $CWD/.ccls
+	touch $CWD/.ccls
+	cat test2 >> $CWD/.ccls
+	rm -f test1 test2
+	exit
+fi
+
 ##行尾加'
 #sed -i "s/$/\'/g" test2
 ##行尾加，
