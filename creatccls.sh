@@ -1,4 +1,5 @@
 #!/bin/zsh
+#用法 creatccls.sh ./
 
 CWD=$(cd $1; pwd)
 temp=$(dirname $(find $CWD -name '*.h' ))
